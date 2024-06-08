@@ -210,7 +210,7 @@ def source(self):
 
 
 def get_readable_message():
-    msg = '<b>Powered by Aeon</b>\n\n'
+    msg = '<blockquote>Powered By WAANO LEECH</blockquote>\n\n'
     button = None
     tasks = len(download_dict)
     currentTime = get_readable_time(time() - botStartTime)
@@ -224,7 +224,7 @@ def get_readable_message():
         globals()['PAGE_NO'] = PAGES
     for download in list(download_dict.values())[STATUS_START:STATUS_LIMIT+STATUS_START]:
         msg += f"<b>{download.status()}:</b> {escape(f'{download.name()}')}\n"
-        msg += f"by {source(download)}\n"
+        msg += f"<blockquote>by @{source(download)}</blockquote>"
         if download.status() not in [MirrorStatus.STATUS_SPLITTING, MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_PROCESSING]:
             msg += f"<blockquote><code>{progress_bar(download.progress())}</code> {download.progress()}"
             msg += f"\n{download.processed_bytes()} of {download.size()}"
