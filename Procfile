@@ -1,2 +1,2 @@
-web: python3 update.py
-worker: python3 update.py
+web: python3 start.sh
+worker: python3 start.sh
