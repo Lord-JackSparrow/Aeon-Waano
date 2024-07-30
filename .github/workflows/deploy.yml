@@ -19,7 +19,7 @@ jobs:
           heroku_email: ${{inputs.HEROKU_EMAIL}}
           usedocker: true
           docker_heroku_process_type: web
-          stack: "heroku-24"
+          stack: "container"
           region: "us"
         env:
           HD_OWNER_ID: ${{inputs.OWNER_ID}}
