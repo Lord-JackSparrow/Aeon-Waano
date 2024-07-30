@@ -1,6 +1,7 @@
 FROM 5hojib/aeon:dev
 
 WORKDIR /usr/src/app
+
 RUN chmod 777 /usr/src/app
 
 COPY requirements.txt .
