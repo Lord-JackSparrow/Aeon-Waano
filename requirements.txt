@@ -31,7 +31,6 @@ pycountry
 python-dotenv
 pyshorteners
 python-magic
-pyrogram==2.0.106
 quoters
 qbittorrent-api
 requests
