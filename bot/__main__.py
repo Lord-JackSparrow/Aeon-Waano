@@ -21,7 +21,7 @@ from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 from pyrogram.filters import command, private, regex
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from bot import bot, config_dict, user_data, botStartTime, LOGGER, Interval, DATABASE_URL, QbInterval, scheduler, bot_name
+from bot import bot, config_dict, user_data, botStartTime, LOGGER, Interval, DATABASE_URL, QbInterval, scheduler, bot_name, user
 from .helper.ext_utils.files_utils import start_cleanup, clean_all, exit_clean_up
 from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time, cmd_exec, sync_to_async, set_commands, update_user_ldata, new_thread, new_task
 from .helper.ext_utils.db_handler import DbManager
@@ -260,7 +260,9 @@ async def main():
     bot.add_handler(MessageHandler(bot_help, filters=command(BotCommands.HelpCommand) & CustomFilters.authorized))
     bot.add_handler(MessageHandler(stats, filters=command(BotCommands.StatsCommand) & CustomFilters.authorized))
     bot.add_handler(CallbackQueryHandler(AeonCallback, filters=regex(r'^aeon')))
-    LOGGER.info("Bot Started!")
+    LOGGER.info(f"Bot Started! [@{bot_name}]")
+    if user:
+        LOGGER.info(f"User Started [@{user.me.username}] Ready!")
     signal(SIGINT, exit_clean_up)
 
 bot.loop.run_until_complete(main())
