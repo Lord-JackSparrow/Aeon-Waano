@@ -44,7 +44,7 @@ variables for indirectly deployment.
 - `BOT_TOKEN` - Bot token, {get it from [BotFather](t.me/BotFather).}
 
 ## Created By☆
-- `CoDer LuFfy` 
+--`CoDer LuFfy` 
 
 
 # Support Us By Joining Our Channels
